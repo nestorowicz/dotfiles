@@ -1,0 +1,9 @@
+[submodule "wsl/.zsh/plugins/zsh-syntax-highlighting"]
+	path = wsl/.zsh/plugins/zsh-syntax-highlighting
+	url = https://github.com/zsh-users/zsh-syntax-highlighting
+[submodule "wsl/.zsh/plugins/zsh-autosuggestions"]
+	path = wsl/.zsh/plugins/zsh-autosuggestions
+	url = https://github.com/zsh-users/zsh-autosuggestions
+[submodule "wsl/.fzf"]
+	path = wsl/.fzf
+	url = https://github.com/junegunn/fzf
