@@ -16,9 +16,15 @@ setopt HIST_IGNORE_ALL_DUPS
 # History won't show duplicates on search.
 setopt HIST_FIND_NO_DUPS
 
+### ---- OTHER EXPORTS --------------------------------------
+
+export BROWSER='/mnt/c/Windows/explorer.exe'
+export NVM_DIR="${HOME}/.nvm"
+
 ### ---- ALIASES --------------------------------------------
 
 alias vi="nvim"
+alias see='explorer.exe'
 
 ### ---- PLUGINS & THEMES -----------------------------------
 
@@ -44,4 +50,7 @@ RPROMPT="%(?.. [%F{red}%?%f])" # Show last command status if non-zero, color red
 
 # Haskell
 [ -f "/home/mnestor/.ghcup/env" ] && source "/home/mnestor/.ghcup/env" # ghcup-env
+
+# NVM
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 
