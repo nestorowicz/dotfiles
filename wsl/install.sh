@@ -21,6 +21,11 @@ if ! command -v zsh &> /dev/null ; then
   sudo apt-get -y install zsh
 fi
 
+if ! command -v tmux &> /dev/null ; then
+  log "installing tmux"
+  sudo apt-get -y install tmux
+fi
+
 log "copying configs"
 cp ${SCRIPT_DIR}/.zshrc $HOME/
 cp -r ${SCRIPT_DIR}/.zsh \
