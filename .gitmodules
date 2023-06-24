@@ -7,3 +7,6 @@
 [submodule "wsl/.fzf"]
 	path = wsl/.fzf
 	url = https://github.com/junegunn/fzf
+[submodule "wsl/.tmux/plugins/tpm"]
+	path = wsl/.tmux/plugins/tpm
+	url = https://github.com/tmux-plugins/tpm

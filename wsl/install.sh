@@ -2,6 +2,7 @@
 
 set -e
 
+SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 ZSHRC="${HOME}/.zshrc"
 GREEN='\033[0;32m'
 NC='\033[0m' # No Color
@@ -21,8 +22,12 @@ if ! command -v zsh &> /dev/null ; then
 fi
 
 log "copying configs"
-cp $PWD/.zshrc $HOME/
-cp -r $PWD/.zsh $PWD/.fzf $HOME/
+cp ${SCRIPT_DIR}/.zshrc $HOME/
+cp -r ${SCRIPT_DIR}/.zsh \
+  ${SCRIPT_DIR}/.fzf \
+  ${SCRIPT_DIR}/.tmux \
+  ${SCRIPT_DIR}/.tmux.conf \
+  $HOME/
 
 if ! command -v fzf &> /dev/null ; then
   log "installing fzf"
@@ -38,3 +43,5 @@ echo '' >> ${ZSHRC}
 echo '# zsh-syntax-highlighting has to be the last statement as per documentation' >> ${ZSHRC}
 echo 'source ${ZSH}/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh' >> ${ZSHRC}
 
+log 'installation complete'
+log 'execute source ~/.zshrc now'
