@@ -197,16 +197,7 @@ require("lazy").setup({
             completeUnimported = true,
             staticcheck = true,
             directoryFilters = { "-.git", "-node_modules" },
-            semanticTokens = true,
-            hints = {
-              assignVariableTypes = true,
-              compositeLiteralFields = true,
-              compositeLiteralTypes = true,
-              constantValues = true,
-              functionTypeParameters = true,
-              parameterNames = true,
-              rangeVariableTypes = true,
-            },
+            semanticTokens = true
           },
         },
       })
