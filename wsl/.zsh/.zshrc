@@ -20,6 +20,7 @@ setopt HIST_FIND_NO_DUPS
 
 export BROWSER='/mnt/c/Windows/explorer.exe'
 export NVM_DIR="${HOME}/.nvm"
+export PATH=$PATH:/usr/local/go/bin:$HOME/.local/bin
 
 ### ---- ALIASES --------------------------------------------
 

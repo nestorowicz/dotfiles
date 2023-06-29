@@ -16,6 +16,23 @@ if ! command -v wslview &> /dev/null ; then
   sudo apt -y install wslu
 fi
 
+if ! command -v rg &> /dev/null ; then
+  log "installing ripgrep"
+  sudo apt -y install ripgrep
+fi
+
+if ! command -v fd &> /dev/null ; then
+  log "installing fd-find"
+  sudo apt -y install fd-find
+  mkdir -p ~/.local/bin/
+  ln -s $(which fdfind) ~/.local/bin/fd
+fi
+
+if ! command -v gopls &> /dev/null ; then
+  log "installing gopls"
+  sudo apt -y install gopls
+fi
+
 if ! command -v zsh &> /dev/null ; then
   log "installing zsh"
   sudo apt-get -y install zsh
@@ -32,6 +49,7 @@ cp -r ${SCRIPT_DIR}/.zsh \
   ${SCRIPT_DIR}/.fzf \
   ${SCRIPT_DIR}/.tmux \
   ${SCRIPT_DIR}/.tmux.conf \
+  ${SCRIPT_DIR}/.config \
   $HOME/
 
 if ! command -v fzf &> /dev/null ; then
@@ -47,6 +65,13 @@ fi
 echo '' >> ${ZSHRC}
 echo '# zsh-syntax-highlighting has to be the last statement as per documentation' >> ${ZSHRC}
 echo 'source ${ZSH}/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh' >> ${ZSHRC}
+
+git config --global alias.co checkout
+git config --global alias.br branch
+git config --global alias.ci commit
+git config --global alias.st status
+git config --global alias.unstage 'reset HEAD --'
+git config --global alias.last 'log -1 HEAD'
 
 log 'installation complete'
 log 'execute source ~/.zshrc now'
